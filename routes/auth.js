@@ -1,30 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const supabase = require("../config/supabase");
-
-// Middleware for JWT Authentication Guard
-const authGuard = async (req, res, next) => {
-    const authHeader = req.headers.authorization;
-    if (!authHeader) {
-        return res.status(401).json({ message: "Missing Authorization header" });
-    }
-
-    const parts = authHeader.split(" ");
-    const token = parts.length === 2 && parts[0] === "Bearer" ? parts[1] : authHeader;
-
-    try {
-        const { data: { user }, error } = await supabase.auth.getUser(token);
-
-        if (error || !user) {
-            return res.status(401).json({ message: "Invalid token" });
-        }
-
-        req.user = user;
-        next();
-    } catch (err) {
-        return res.status(401).json({ message: "Invalid token" });
-    }
-};
+const authMiddleware = require("../middleware/authMiddleware");
 
 // POST /auth/signup
 router.post("/signup", async (req, res) => {
@@ -84,8 +61,18 @@ router.post("/login", async (req, res) => {
     }
 });
 
+// POST /auth/logout or /logout
+router.post(["/logout", "/auth/logout"], authMiddleware, async (req, res) => {
+    try {
+        await supabase.auth.signOut();
+    } catch (err) {
+        // ignore errors on signout
+    }
+    return res.status(204).send();
+});
+
 // GET /auth/profile or /profile
-router.get("/profile", authGuard, async (req, res) => {
+router.get("/profile", authMiddleware, async (req, res) => {
     return res.json({
         id: req.user.id,
         email: req.user.email,
