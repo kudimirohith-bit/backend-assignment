@@ -2,11 +2,14 @@ require("dotenv").config();
 const express = require("express");
 const db = require("./database");
 const messageRoutes = require("./routes/messageRoutes");
+const authRoutes = require("./routes/auth");
 const app = express();
 
 app.use(express.json());
 
 app.use("/messages", messageRoutes);
+app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 
 const PORT = process.env.PORT || 3000;
 
