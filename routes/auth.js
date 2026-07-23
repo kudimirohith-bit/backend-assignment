@@ -5,22 +5,24 @@ const supabase = require("../config/supabase");
 // Middleware for JWT Authentication Guard
 const authGuard = async (req, res, next) => {
     const authHeader = req.headers.authorization;
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
-        return res.status(401).json({ error: "Unauthorized: Missing or invalid token" });
+    if (!authHeader) {
+        return res.status(401).json({ message: "Missing Authorization header" });
     }
 
-    const token = authHeader.split(" ")[1];
+    const parts = authHeader.split(" ");
+    const token = parts.length === 2 && parts[0] === "Bearer" ? parts[1] : authHeader;
+
     try {
         const { data: { user }, error } = await supabase.auth.getUser(token);
 
         if (error || !user) {
-            return res.status(401).json({ error: "Unauthorized: Invalid or expired token" });
+            return res.status(401).json({ message: "Invalid token" });
         }
 
         req.user = user;
         next();
     } catch (err) {
-        return res.status(401).json({ error: "Unauthorized: " + err.message });
+        return res.status(401).json({ message: "Invalid token" });
     }
 };
 
