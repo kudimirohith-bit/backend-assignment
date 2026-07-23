@@ -26,7 +26,7 @@ const authGuard = async (req, res, next) => {
 
 // POST /auth/signup
 router.post("/signup", async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password } = req.body || {};
 
     if (!email || !password) {
         return res.status(400).json({ error: "Email and password are required" });
@@ -54,7 +54,7 @@ router.post("/signup", async (req, res) => {
 
 // POST /auth/login
 router.post("/login", async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password } = req.body || {};
 
     if (!email || !password) {
         return res.status(400).json({ error: "Email and password are required" });

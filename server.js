@@ -3,12 +3,16 @@ const express = require("express");
 const db = require("./database");
 const messageRoutes = require("./routes/messageRoutes");
 const authRoutes = require("./routes/auth");
+const publicRoutes = require("./routes/public");
+const protectedRoutes = require("./routes/protected");
 const app = express();
 
 app.use(express.json());
 
 app.use("/messages", messageRoutes);
 app.use("/auth", authRoutes);
+app.use("/public", publicRoutes);
+app.use("/protected", protectedRoutes);
 app.use("/", authRoutes);
 
 const PORT = process.env.PORT || 3000;
