@@ -85,7 +85,7 @@ function stubClassify(message) {
   let confidence = 0.85;
   let reason = "Classified via deterministic fallback rules.";
 
-  if (text.includes("production down") || text.includes("outage") || text.includes("security") || text.includes("down!")) {
+  if (text.includes("production down") || text.includes("outage") || text.includes("security") || text.includes("500 internal server error") || text.includes("unable to access")) {
     category = text.includes("charge") || text.includes("bill") ? "billing" : "bug";
     urgency = "critical";
     confidence = 0.98;
@@ -105,14 +105,24 @@ function stubClassify(message) {
     urgency = "low";
     confidence = 0.90;
     reason = "Detected request for new feature or enhancement in stub mode.";
-  } else if (text.length < 10 || text.includes("stuff") || text.includes("help") || /^[^\w\s]+$/.test(text)) {
+  } else if (text.includes("asdfghjk") || /^[^\w\s]+$/.test(text) || text.length < 10) {
     category = "other";
     urgency = "low";
-    confidence = 0.35;
-    reason = "Input is vague, ambiguous, or lacks context in stub mode.";
-  } else {
+    confidence = 0.20;
+    reason = "Input is uninterpretable or random characters in stub mode.";
+  } else if (text.includes("working hours") || text.includes("holiday") || text.includes("hours")) {
+    category = "other";
+    urgency = "low";
+    confidence = 0.85;
+    reason = "General business hours inquiry in stub mode.";
+  } else if (text.includes("trouble") || text.includes("account settings") || text.includes("help")) {
     category = "other";
     urgency = "medium";
+    confidence = 0.70;
+    reason = "Ambiguous user account issue in stub mode.";
+  } else {
+    category = "other";
+    urgency = "low";
     confidence = 0.70;
     reason = "General customer inquiry processed in stub mode.";
   }

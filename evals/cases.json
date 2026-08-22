@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Billing Inquiry - High Urgency",
+    "input": "I noticed a double charge of $49.99 on my billing statement for this month. Please refund the duplicate payment immediately.",
+    "expectedCategory": "billing",
+    "expectedUrgency": "high"
+  },
+  {
+    "id": 2,
+    "name": "Critical Production Bug",
+    "input": "URGENT: Production database server is throwing 500 internal server errors. All users are unable to access their accounts!",
+    "expectedCategory": "bug",
+    "expectedUrgency": "critical"
+  },
+  {
+    "id": 3,
+    "name": "Standard Bug Report",
+    "input": "The export button on the reports page fails when exporting more than 100 rows. Shows a blank screen.",
+    "expectedCategory": "bug",
+    "expectedUrgency": "medium"
+  },
+  {
+    "id": 4,
+    "name": "Feature Request - Low Urgency",
+    "input": "Can you please add a dark mode toggle option to the dashboard user settings page?",
+    "expectedCategory": "feature",
+    "expectedUrgency": "low"
+  },
+  {
+    "id": 5,
+    "name": "Low Urgency Feature Request",
+    "input": "It would be great to customize font size on the analytics table.",
+    "expectedCategory": "feature",
+    "expectedUrgency": "low"
+  },
+  {
+    "id": 6,
+    "name": "Ambiguous Input",
+    "input": "I am having trouble with my account settings and things aren't working right.",
+    "expectedCategory": "other",
+    "expectedUrgency": "medium"
+  },
+  {
+    "id": 7,
+    "name": "Unclear / Nonsense Input",
+    "input": "asdfghjk 12345 !!! ???",
+    "expectedCategory": "other",
+    "expectedUrgency": "low"
+  },
+  {
+    "id": 8,
+    "name": "General Other Inquiry",
+    "input": "What are your customer support working hours during upcoming holiday season?",
+    "expectedCategory": "other",
+    "expectedUrgency": "low"
+  }
+]

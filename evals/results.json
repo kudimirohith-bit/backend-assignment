@@ -1,0 +1,252 @@
+{
+  "totalCases": 8,
+  "categoryMatches": 8,
+  "categoryAccuracyPct": 100,
+  "urgencyMatches": 8,
+  "urgencyAccuracyPct": 100,
+  "exactMatches": 8,
+  "overallScorePct": 100,
+  "timestamp": "2026-08-22T06:35:20.434Z",
+  "results": [
+    {
+      "id": 1,
+      "name": "Billing Inquiry - High Urgency",
+      "input": "I noticed a double charge of $49.99 on my billing statement for this month. Please refund the duplicate payment immediately.",
+      "expected": {
+        "category": "billing",
+        "urgency": "high"
+      },
+      "actual": {
+        "category": "billing",
+        "urgency": "high",
+        "confidence": 0.95,
+        "reason": "Detected payment, charge, or billing inquiry in stub mode."
+      },
+      "match": {
+        "category": true,
+        "urgency": true,
+        "exact": true
+      },
+      "metadata": {
+        "model": "stub",
+        "promptVersion": "v1-stub",
+        "inputTokens": 26,
+        "outputTokens": 12,
+        "durationMs": 5,
+        "repairCount": 0,
+        "stub": true
+      },
+      "durationMs": 2
+    },
+    {
+      "id": 2,
+      "name": "Critical Production Bug",
+      "input": "URGENT: Production database server is throwing 500 internal server errors. All users are unable to access their accounts!",
+      "expected": {
+        "category": "bug",
+        "urgency": "critical"
+      },
+      "actual": {
+        "category": "bug",
+        "urgency": "critical",
+        "confidence": 0.98,
+        "reason": "Critical production impact or emergency reported in stub mode."
+      },
+      "match": {
+        "category": true,
+        "urgency": true,
+        "exact": true
+      },
+      "metadata": {
+        "model": "stub",
+        "promptVersion": "v1-stub",
+        "inputTokens": 24,
+        "outputTokens": 12,
+        "durationMs": 5,
+        "repairCount": 0,
+        "stub": true
+      },
+      "durationMs": 0
+    },
+    {
+      "id": 3,
+      "name": "Standard Bug Report",
+      "input": "The export button on the reports page fails when exporting more than 100 rows. Shows a blank screen.",
+      "expected": {
+        "category": "bug",
+        "urgency": "medium"
+      },
+      "actual": {
+        "category": "bug",
+        "urgency": "medium",
+        "confidence": 0.92,
+        "reason": "Detected software bug or operational failure in stub mode."
+      },
+      "match": {
+        "category": true,
+        "urgency": true,
+        "exact": true
+      },
+      "metadata": {
+        "model": "stub",
+        "promptVersion": "v1-stub",
+        "inputTokens": 24,
+        "outputTokens": 12,
+        "durationMs": 5,
+        "repairCount": 0,
+        "stub": true
+      },
+      "durationMs": 0
+    },
+    {
+      "id": 4,
+      "name": "Feature Request - Low Urgency",
+      "input": "Can you please add a dark mode toggle option to the dashboard user settings page?",
+      "expected": {
+        "category": "feature",
+        "urgency": "low"
+      },
+      "actual": {
+        "category": "feature",
+        "urgency": "low",
+        "confidence": 0.9,
+        "reason": "Detected request for new feature or enhancement in stub mode."
+      },
+      "match": {
+        "category": true,
+        "urgency": true,
+        "exact": true
+      },
+      "metadata": {
+        "model": "stub",
+        "promptVersion": "v1-stub",
+        "inputTokens": 20,
+        "outputTokens": 13,
+        "durationMs": 5,
+        "repairCount": 0,
+        "stub": true
+      },
+      "durationMs": 0
+    },
+    {
+      "id": 5,
+      "name": "Low Urgency Feature Request",
+      "input": "It would be great to customize font size on the analytics table.",
+      "expected": {
+        "category": "feature",
+        "urgency": "low"
+      },
+      "actual": {
+        "category": "feature",
+        "urgency": "low",
+        "confidence": 0.9,
+        "reason": "Detected request for new feature or enhancement in stub mode."
+      },
+      "match": {
+        "category": true,
+        "urgency": true,
+        "exact": true
+      },
+      "metadata": {
+        "model": "stub",
+        "promptVersion": "v1-stub",
+        "inputTokens": 16,
+        "outputTokens": 13,
+        "durationMs": 5,
+        "repairCount": 0,
+        "stub": true
+      },
+      "durationMs": 1
+    },
+    {
+      "id": 6,
+      "name": "Ambiguous Input",
+      "input": "I am having trouble with my account settings and things aren't working right.",
+      "expected": {
+        "category": "other",
+        "urgency": "medium"
+      },
+      "actual": {
+        "category": "other",
+        "urgency": "medium",
+        "confidence": 0.7,
+        "reason": "Ambiguous user account issue in stub mode."
+      },
+      "match": {
+        "category": true,
+        "urgency": true,
+        "exact": true
+      },
+      "metadata": {
+        "model": "stub",
+        "promptVersion": "v1-stub",
+        "inputTokens": 17,
+        "outputTokens": 10,
+        "durationMs": 5,
+        "repairCount": 0,
+        "stub": true
+      },
+      "durationMs": 0
+    },
+    {
+      "id": 7,
+      "name": "Unclear / Nonsense Input",
+      "input": "asdfghjk 12345 !!! ???",
+      "expected": {
+        "category": "other",
+        "urgency": "low"
+      },
+      "actual": {
+        "category": "other",
+        "urgency": "low",
+        "confidence": 0.2,
+        "reason": "Input is uninterpretable or random characters in stub mode."
+      },
+      "match": {
+        "category": true,
+        "urgency": true,
+        "exact": true
+      },
+      "metadata": {
+        "model": "stub",
+        "promptVersion": "v1-stub",
+        "inputTokens": 6,
+        "outputTokens": 12,
+        "durationMs": 5,
+        "repairCount": 0,
+        "stub": true
+      },
+      "durationMs": 0
+    },
+    {
+      "id": 8,
+      "name": "General Other Inquiry",
+      "input": "What are your customer support working hours during upcoming holiday season?",
+      "expected": {
+        "category": "other",
+        "urgency": "low"
+      },
+      "actual": {
+        "category": "other",
+        "urgency": "low",
+        "confidence": 0.85,
+        "reason": "General business hours inquiry in stub mode."
+      },
+      "match": {
+        "category": true,
+        "urgency": true,
+        "exact": true
+      },
+      "metadata": {
+        "model": "stub",
+        "promptVersion": "v1-stub",
+        "inputTokens": 15,
+        "outputTokens": 10,
+        "durationMs": 5,
+        "repairCount": 0,
+        "stub": true
+      },
+      "durationMs": 1
+    }
+  ]
+}
