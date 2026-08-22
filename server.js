@@ -5,6 +5,7 @@ const messageRoutes = require("./routes/messageRoutes");
 const authRoutes = require("./routes/auth");
 const publicRoutes = require("./routes/public");
 const protectedRoutes = require("./routes/protected");
+const triageRoutes = require("./routes/triage");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./config/swagger");
 const app = express();
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/triage", triageRoutes);
 app.use("/messages", messageRoutes);
 app.use("/auth", authRoutes);
 app.use("/public", publicRoutes);
