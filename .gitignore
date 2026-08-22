@@ -1,2 +1,5 @@
 .env
 node_modules/
+.ollama_home/
+.ollama_models/
+.ollama.log
