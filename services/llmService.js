@@ -12,6 +12,16 @@ if (!fs.existsSync(logsDir)) {
   fs.mkdirSync(logsDir, { recursive: true });
 }
 
+/**
+ * Service Features:
+ * - Kill Switch: LLM_ENABLED=false triggers 503 clean fallback
+ * - Timeout: Fixed fetch timeout via AbortSignal (LLM_TIMEOUT_MS)
+ * - Retries: Exponential backoff with random jitter for 429/5xx/timeouts
+ * - Stub Mode: LLM_STUB=1 produces deterministic valid classification
+ * - Cost Logging: Token count estimates, duration ms, repair tracking
+ * - Quarantine: Log failed 2nd attempt responses to logs/quarantine.json
+ */
+
 // Utility: Sleep with backoff and jitter
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
