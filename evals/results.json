@@ -6,7 +6,7 @@
   "urgencyAccuracyPct": 100,
   "exactMatches": 8,
   "overallScorePct": 100,
-  "timestamp": "2026-08-22T06:35:20.434Z",
+  "timestamp": "2026-08-22T06:38:19.370Z",
   "results": [
     {
       "id": 1,
@@ -28,15 +28,15 @@
         "exact": true
       },
       "metadata": {
-        "model": "stub",
-        "promptVersion": "v1-stub",
+        "model": "gemma3:1b",
+        "promptVersion": "v1",
         "inputTokens": 26,
         "outputTokens": 12,
-        "durationMs": 5,
+        "durationMs": 228,
         "repairCount": 0,
-        "stub": true
+        "fallback": true
       },
-      "durationMs": 2
+      "durationMs": 228
     },
     {
       "id": 2,
@@ -58,15 +58,15 @@
         "exact": true
       },
       "metadata": {
-        "model": "stub",
-        "promptVersion": "v1-stub",
+        "model": "gemma3:1b",
+        "promptVersion": "v1",
         "inputTokens": 24,
         "outputTokens": 12,
-        "durationMs": 5,
+        "durationMs": 10,
         "repairCount": 0,
-        "stub": true
+        "fallback": true
       },
-      "durationMs": 0
+      "durationMs": 10
     },
     {
       "id": 3,
@@ -88,15 +88,15 @@
         "exact": true
       },
       "metadata": {
-        "model": "stub",
-        "promptVersion": "v1-stub",
+        "model": "gemma3:1b",
+        "promptVersion": "v1",
         "inputTokens": 24,
         "outputTokens": 12,
-        "durationMs": 5,
+        "durationMs": 9,
         "repairCount": 0,
-        "stub": true
+        "fallback": true
       },
-      "durationMs": 0
+      "durationMs": 9
     },
     {
       "id": 4,
@@ -118,15 +118,15 @@
         "exact": true
       },
       "metadata": {
-        "model": "stub",
-        "promptVersion": "v1-stub",
+        "model": "gemma3:1b",
+        "promptVersion": "v1",
         "inputTokens": 20,
         "outputTokens": 13,
-        "durationMs": 5,
+        "durationMs": 7,
         "repairCount": 0,
-        "stub": true
+        "fallback": true
       },
-      "durationMs": 0
+      "durationMs": 7
     },
     {
       "id": 5,
@@ -148,15 +148,15 @@
         "exact": true
       },
       "metadata": {
-        "model": "stub",
-        "promptVersion": "v1-stub",
+        "model": "gemma3:1b",
+        "promptVersion": "v1",
         "inputTokens": 16,
         "outputTokens": 13,
-        "durationMs": 5,
+        "durationMs": 8,
         "repairCount": 0,
-        "stub": true
+        "fallback": true
       },
-      "durationMs": 1
+      "durationMs": 8
     },
     {
       "id": 6,
@@ -178,15 +178,15 @@
         "exact": true
       },
       "metadata": {
-        "model": "stub",
-        "promptVersion": "v1-stub",
+        "model": "gemma3:1b",
+        "promptVersion": "v1",
         "inputTokens": 17,
         "outputTokens": 10,
-        "durationMs": 5,
+        "durationMs": 6,
         "repairCount": 0,
-        "stub": true
+        "fallback": true
       },
-      "durationMs": 0
+      "durationMs": 6
     },
     {
       "id": 7,
@@ -208,15 +208,15 @@
         "exact": true
       },
       "metadata": {
-        "model": "stub",
-        "promptVersion": "v1-stub",
+        "model": "gemma3:1b",
+        "promptVersion": "v1",
         "inputTokens": 6,
         "outputTokens": 12,
-        "durationMs": 5,
+        "durationMs": 6,
         "repairCount": 0,
-        "stub": true
+        "fallback": true
       },
-      "durationMs": 0
+      "durationMs": 6
     },
     {
       "id": 8,
@@ -238,15 +238,15 @@
         "exact": true
       },
       "metadata": {
-        "model": "stub",
-        "promptVersion": "v1-stub",
+        "model": "gemma3:1b",
+        "promptVersion": "v1",
         "inputTokens": 15,
         "outputTokens": 10,
-        "durationMs": 5,
+        "durationMs": 4,
         "repairCount": 0,
-        "stub": true
+        "fallback": true
       },
-      "durationMs": 1
+      "durationMs": 5
     }
   ]
 }
